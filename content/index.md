@@ -1,6 +1,5 @@
 ---
-title: Welcome to Quartz
+title: 技术博客
 ---
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+作为博客的门面，我暂时没想好在这里放点什么。

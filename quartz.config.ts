@@ -8,15 +8,13 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
     configuration: {
-        pageTitle: "Quartz 4",
+        pageTitle: "有思",
         pageTitleSuffix: "",
         enableSPA: true,
         enablePopovers: true,
-        analytics: {
-            provider: "plausible",
-        },
-        locale: "en-US",
-        baseUrl: "quartz.jzhao.xyz",
+        analytics: null,
+        locale: "zh-CN",
+        baseUrl: "blogs.volan.qzz.io",
         ignorePatterns: ["private", "templates", ".obsidian"],
         defaultDateType: "modified",
         theme: {
