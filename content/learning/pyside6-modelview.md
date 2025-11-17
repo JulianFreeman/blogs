@@ -1,5 +1,5 @@
 ---
-title: PySide6 - 模型视图
+title: PySide6 模型视图
 date: 2023-07-01 23:28:00 -0400
 tags:
   - python
