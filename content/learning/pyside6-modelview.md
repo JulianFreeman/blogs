@@ -1,12 +1,9 @@
 ---
-title: PySide6 笔记 - 模型视图
+title: PySide6 - 模型视图
 date: 2023-07-01 23:28:00 -0400
 tags:
-  - programming
   - python
   - gui
-  - modelview
-description: 本文简单介绍一点 PySide6 的模型视图
 ---
 
 ## 模型视图
