@@ -26,6 +26,13 @@ export const defaultContentPageLayout: PageLayout = {
         Component.ArticleTitle(),
         Component.ContentMeta(),
         Component.TagList(),
+        Component.ConditionalRender({
+            component: Component.RecentNotes({
+                limit: 7,
+                showTags: false,
+            }),
+            condition: (page) => page.fileData.relativePath === "index.md",
+        }),
     ],
     left: [
         Component.PageTitle(),
@@ -44,6 +51,7 @@ export const defaultContentPageLayout: PageLayout = {
     ],
     right: [
         // Component.Graph(),
+        // Component.RecentNotes(),
         Component.DesktopOnly(Component.TableOfContents()),
         Component.Backlinks(),
     ],
