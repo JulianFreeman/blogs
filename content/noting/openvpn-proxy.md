@@ -119,19 +119,11 @@ cd /etc/danted.d
 sudo vim danted-1080.conf
 ```
 
-```yaml title="/etc/danted.d/danted-1080.conf"
+```yaml /1080/ /tun0/ /wlo1/ title="/etc/danted.d/danted-1080.conf"
 # ================= 日志设置 =================
 # 建议指定独立日志文件，方便排查，也可以继续用 syslog
 # logoutput: syslog
 logoutput: /var/log/danted-1080.log
-
-# ================= 性能与网络优化 =================
-# 禁用 TCP Nagle 算法。
-# 对于网页浏览等交互式流量，这能显著降低延迟。
-socket: tcp_nodelay
-
-# 调整 Socket 缓冲区 (根据服务器内存调整，一般设为系统默认即可，这里手动指定保证大流量吞吐)
-# socket: sendbuf=1048576 recvbuf=1048576
 
 # ================= 接口设置 =================
 internal: wlo1 port = 1080
