@@ -49,3 +49,9 @@ channel 6: open failed: connect failed: open failed
 sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
 sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1
 ```
+
+## 关于机器人验证
+
+使用代理上网后访问一些网站总弹出来谷歌的或者 Cloudflare 的机器人验证，这是因为开启代理后对于网站来说，它们看到的是来自数据中心的 IP 而不是住宅 IP。正常人肯定都是在家里上网，所以来自数据中心的 IP 会被普遍认为是脚本、爬虫或攻击程序等，信誉度极低。
+
+关于消除这个影响，AI 可能会推荐使用 Cloudflare WARP，但是要注意，**安装之后可能 SSH 就进不去了，慎用**。
