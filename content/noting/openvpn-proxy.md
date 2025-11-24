@@ -3,6 +3,7 @@ title: OpenVPN 代理上网
 date: 2025-11-23 22:55:00 -0400
 tags:
   - vpn
+  - proxy
 ---
 ## 在云服务器上安装 openvpn3
 
@@ -458,3 +459,9 @@ sudo systemctl restart openvpn.service
 访问 https://browserleaks.com/ip 查看 IP 地址以及进行 DNS 泄露测试，只要没有出现本地的公网 IP 就算成功了。
 
 不过还有一点要防的是 WebRTC 泄露 IP 地址，这个可以通过 [WebRTC Control](https://chromewebstore.google.com/detail/webrtc-control/fjkmabmdepjfammlpliljpnbhleegehm) 以及类似插件来控制。
+
+## 为什么需要一个本地服务器
+
+一开始有想过既然 dante 服务能装在本地服务器上，那我不能直接装在云服务器上，让浏览器的代理插件直接指定云服务器的 IP 吗？后来查了一下，主要是因为 SOCKS5 协议并不加密，因此从浏览器插件发送到云服务器的数据全是明文的。而如果先转发到本地服务器，让本地服务器通过 OpenVPN 的虚拟网卡再转发数据，这样数据在从本地服务器出去之后就是加密的了。这个加密是 OpenVPN 实现的。
+
+不过如果实在拿不出一个本地服务器来代理，请参考 [[ssh-proxy]] 。
