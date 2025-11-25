@@ -100,3 +100,13 @@ certbot revoke --cert-path /etc/letsencrypt/live/yourdomain.com/fullchain.pem
 ```shell
 certbot delete --cert-name yourdomain.com
 ```
+
+## 安装证书
+
+如果使用了 `certonly` 模式申请了证书，但是 nginx 的配置文件并没有添加 https 支持，此时除了手动修改 nginx 配置文件之外，也可以直接安装证书
+
+```shell
+certbot install --nginx
+```
+
+运行后会要求选择要安装哪个证书，选择后 certbot 会自己寻找对应的配置文件并更新。
