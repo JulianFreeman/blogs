@@ -55,7 +55,9 @@ Manifest 文件有几种类型，以 `Google.Chrome` 的 manifest 文件为例�
 
 然后把这些信息从软件原版的几个 manifest 文件中照抄到我们自定义的 manifest 文件中即可。因为我自定义的文件是以 installer 文件为基础的，所以一般已经包含 `PackageIdentifier` 、 `PackageVersion` 、 `Installers` 等信息了。
 
-不过这个 `Installers` 中可能包含不同架构的安装包，可以根据自己的需要删减。最后把安装包的链接和哈希(SHA256)换掉，这个 manifest 文件就制作完成了。
+**但是 `ManifestType` 这个要改成 `singleton` ，因为我们用的就是单一文件的类型** 。 `ManifestVersion` 的版本只要跟 schema 的版本一致即可。
+
+还有这个 `Installers` 中可能包含不同架构的安装包，可以根据自己的需要删减。最后把安装包的链接和哈希(SHA256)换掉，这个 manifest 文件就制作完成了。
 
 ## 使用 Manifest 文件
 
